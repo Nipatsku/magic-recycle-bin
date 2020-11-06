@@ -26,8 +26,8 @@ const getRecycleBinSize = () => {
     let sizeKB = 0, items = 0
     try {
         const stdout = vbs.stdout.toString()
-        items = stdout.match( /([0-9].*)\s?Items/ )[1]
-        sizeKB = stdout.match( /([0-9].*)\s?KB/ )[1]
+        items = Number( stdout.match( /([0-9].*)\s?Items/ )[1] )
+        sizeKB = Number( stdout.match( /([0-9].*)\s?KB/ )[1] )
     } catch ( e ) {
         console.error( e.message )
     }
